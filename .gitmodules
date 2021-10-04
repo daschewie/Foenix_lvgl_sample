@@ -1,0 +1,12 @@
+[submodule "modules/lvgl"]
+	path = modules/lvgl
+	url = git@github.com:lvgl/lvgl.git
+[submodule "modules/Calypsi-65816-Foenix"]
+	path = modules/Calypsi-65816-Foenix
+	url = https://github.com/hth313/Calypsi-65816-Foenix.git
+[submodule "lvgl"]
+	path = lvgl
+	url = git@github.com:lvgl/lvgl.git
+[submodule "Calypsi-65816-Foenix"]
+	path = Calypsi-65816-Foenix
+	url = git@github.com:hth313/Calypsi-65816-Foenix.git
