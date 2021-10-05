@@ -4,9 +4,9 @@
 CC = cc65816
 LN = ln65816
 FOENIX_DIR_NAME = Calypsi-65816-Foenix
-FOENIX_MODEL = FMX
-MEMORY_MODEL = --code-model=large --data-model=small
-LIB_MODEL = lc-sd
+FOENIX_MODEL = U
+MEMORY_MODEL = --code-model=large --data-model=medium
+LIB_MODEL = lc-md
 FOENIX_LIB = $(FOENIX_DIR_NAME)/Foenix-$(LIB_MODEL).a
 FOENIX_LINKER_RULES = $(FOENIX_DIR_NAME)/linker-files/Foenix-$(FOENIX_MODEL).scm
 
@@ -44,7 +44,7 @@ all: default
 	@echo "CC $<"
     
 default: $(AOBJS) $(COBJS) $(MAINOBJ) $(FOENIX_LIB)
-	$(LN) -o $(BIN) $(MAINOBJ) $(AOBJS) $(COBJS) $(FOENIX_LINKER_RULES) clib-$(LIB_MODEL)-Foenix.a --output-format=pgz --rtattr printf=reduced --rtattr cstartup=Foenix --semi-hosted
+	$(LN) -o $(BIN) $(MAINOBJ) $(AOBJS) $(COBJS) $(FOENIX_LINKER_RULES) clib-$(LIB_MODEL)-Foenix.a --output-format=pgz --rtattr printf=reduced --rtattr cstartup=Foenix --semi-hosted --target Foenix
 
 $(FOENIX_LIB):
 	(cd $(FOENIX_DIR_NAME) ; make all)
